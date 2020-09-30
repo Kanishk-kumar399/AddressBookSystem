@@ -19,30 +19,12 @@ public class AddressBookMain
 	{
 	System.out.println(contactArray);
 	}
-	public void editContact()
+	public void deleteContact()
 	{
-		System.out.println("Enter The First Name to edit the contact details");
+		System.out.println("Enter The First Name to delete the contact details");
 		String fn=sc.nextLine();
 		Contact obj=contactMap.get(fn);
-		System.out.println();
-		System.out.println("Enter the Address");
-		String ad=sc.next();
-		obj.setAddress(ad);
-		System.out.println("Enter the City");
-		String ci=sc.next();
-		obj.setCity(ci);
-		System.out.println("Enter the State");
-		String st=sc.next();
-		obj.setState(st);
-		System.out.println("Enter the Pincode");
-		int pin=sc.nextInt();
-		obj.setPinCode(pin);
-		System.out.println("Enter the Number");
-		long num=sc.nextLong();
-		obj.setPhoneNumber(num);
-		System.out.println("Enter the Email");
-		String em=sc.next();
-		obj.setEmailId(em);
+		contactArray.remove(obj);
 	}
 	public static void main(String args[])
 	{
@@ -50,8 +32,8 @@ public class AddressBookMain
 		Contact1.addNewContact("yusm","dsdsan","dsdsH","agri","UP",5545,5478686,"shivssds@gmail.com");
 		Contact1.addNewContact("Ram","Sharan","SHHH","Delhi","MP",3345,7688686,"shivam@gmail.com");
 		Contact1.printContact();
-		Contact1.editContact();
-		System.out.println("After Editing:");
+		Contact1.deleteContact();
+		System.out.println("After deleting:");
 		Contact1.printContact();
 	}
 }
