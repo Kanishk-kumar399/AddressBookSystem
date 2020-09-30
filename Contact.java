@@ -71,6 +71,6 @@ public class Contact
 	@Override
 	public String toString()
         {
-        return "First Name: "+firstName+" \nLast Name: "+lastName+"\nAddress :"+address+"\nCity: "+city+"\nPincode: "+pinCode+"\nState: "+state+"\nPhoneNumber: "+phoneNumber+"\nEmail ID: "+emailId+"\n";
+        return "First Name: "+firstName+" \nLast Name: "+lastName+"\nAddress: "+address+"\nCity: "+city+"\nPincode: "+pinCode+"\nState: "+state+"\nPhoneNumber: "+phoneNumber+"\nEmail ID: "+emailId+"\n";
         }
 }
