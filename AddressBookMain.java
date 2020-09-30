@@ -1,33 +1,24 @@
+import java.util.ArrayList;
 public class AddressBookMain
 {
-	private String firstName;
-        private String lastName;
-        private String address;
-        private String state;
-        private String city;
-        private int pinCode;
-        private long phoneNumber;
-        private String emailId;
-
-        public AddressBookMain(String firstName,String lastName,String address,String city,String state,int pinCode,long phoneNumber,String emailId)
-        {
-         this.firstName=firstName;
-         this.lastName=lastName;
-         this.address=address;
-         this.city=city;
-         this.state=state;
-         this.pinCode=pinCode;
-         this.phoneNumber=phoneNumber;
-         this.emailId=emailId;
-        }
-	@Override
-	public String toString()
+	int numOfContact=0;
+	private Contact[] contactArray;
+	
+	public AddressBookMain()
 	{
-	return "First Name: "+firstName+" \nLast Name: "+lastName+"\nAddress :"+address+"\nCity: "+city+"\nPincode: "+pinCode+"\nState: "+state+"\nPhoneNumber: "+phoneNumber+"\nEmail ID: "+emailId;
+		contactArray=new Contact[5];
 	}
+	private void addNewContact(String firstName,String lastName,String address,String city,String state,int pinCode,int phoneNumber,String emailId)
+	{
+		contactArray[numOfContact]=new Contact(firstName,lastName,address,city,state,pinCode,phoneNumber,emailId);
+		System.out.println(contactArray[numOfContact]);
+		numOfContact++;
+	}
+
 	public static void main(String args[])
 	{
-	AddressBookMain Contact1=new AddressBookMain("Kumar","Kanishk","SH-3/40","Varanasi","UP",2210,884024123,"kanishk@gmail.com");
-	System.out.println(Contact1);
+		AddressBookMain Contact1=new AddressBookMain();
+		Contact1.addNewContact("Kumar","Kanishk","SH-3/40","Varanasi","UP",2210,884024123,"kanishk@gmail.com");
+		Contact1.addNewContact("Ram","Sharan","SHHH","Delhi","MP",3345,7688686,"shivam@gmail.com");
 	}
 }
