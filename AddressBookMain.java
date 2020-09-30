@@ -9,8 +9,24 @@ public class AddressBookMain
 		contactArray=new ArrayList<>();
 		contactMap=new HashMap<>();
 	}
-	public void addNewContact(String firstName,String lastName,String address,String city,String state,int pinCode,long phoneNumber,String emailId)
+	public void addNewContact()
 	{
+		System.out.println("Enter First Name");
+		String firstName=sc.next();
+		System.out.println("Enter last Name");
+		String lastName=sc.next();
+		System.out.println("Enter the Address");
+		String address=sc.next();
+		System.out.println("Enter the City");
+		String city=sc.next();
+		System.out.println("Enter the State");
+		String state=sc.next();
+		System.out.println("Enter the Pincode");
+		int pinCode=sc.nextInt();
+		System.out.println("Enter the Number");
+		long phoneNumber=sc.nextLong();
+		System.out.println("Enter the Email");
+		String emailId=sc.next();
 		Contact obj=new Contact(firstName,lastName,address,city,state,pinCode,phoneNumber,emailId);
 		contactArray.add(obj);
 		contactMap.put(firstName,obj);
@@ -28,12 +44,19 @@ public class AddressBookMain
 	}
 	public static void main(String args[])
 	{
+		Scanner s=new Scanner(System.in);
 		AddressBookMain Contact1=new AddressBookMain();
-		Contact1.addNewContact("yusm","dsdsan","dsdsH","agri","UP",5545,5478686,"shivssds@gmail.com");
-		Contact1.addNewContact("Ram","Sharan","SHHH","Delhi","MP",3345,7688686,"shivam@gmail.com");
-		Contact1.printContact();
-		Contact1.deleteContact();
-		System.out.println("After deleting:");
-		Contact1.printContact();
+		while(true)
+		{
+		System.out.println("Do You Want to Add Contact(Y/N)");
+		char choice=s.next().charAt(0);
+			if(choice=='Y')
+			{
+			Contact1.addNewContact();
+			Contact1.printContact();
+			}
+			else
+			System.exit(0);
+		}
 	}
 }
