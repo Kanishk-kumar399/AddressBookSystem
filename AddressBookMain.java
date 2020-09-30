@@ -9,6 +9,31 @@ public class AddressBookMain
 		contactArray=new ArrayList<>();
 		contactMap=new HashMap<>();
 	}
+	public void editContact()
+	{
+		System.out.println("Enter The First Name to edit the contact details");
+		String fn=sc.nextLine();
+		Contact obj=contactMap.get(fn);
+		System.out.println();
+		System.out.println("Enter the Address");
+		String ad=sc.next();
+		obj.setAddress(ad);
+		System.out.println("Enter the City");
+		String ci=sc.next();
+		obj.setCity(ci);
+		System.out.println("Enter the State");
+		String st=sc.next();
+		obj.setState(st);
+		System.out.println("Enter the Pincode");
+		int pin=sc.nextInt();
+		obj.setPinCode(pin);
+		System.out.println("Enter the Number");
+		long num=sc.nextLong();
+		obj.setPhoneNumber(num);
+		System.out.println("Enter the Email");
+		String em=sc.next();
+		obj.setEmailId(em);
+	}
 	public void addNewContact()
 	{
 		System.out.println("Enter First Name");
@@ -48,15 +73,20 @@ public class AddressBookMain
 		AddressBookMain Contact1=new AddressBookMain();
 		while(true)
 		{
-		System.out.println("Do You Want to Add Contact(Y/N)");
-		char choice=s.next().charAt(0);
-			if(choice=='Y')
-			{
-			Contact1.addNewContact();
-			Contact1.printContact();
-			}
-			else
-			System.exit(0);
+		System.out.println("Enter  your choice \n1.Add new Contact \n2.Edit Contact \n3. Delete Contact \n4.Print Book \n5.Close");
+		int ch=s.nextInt();
+		switch(ch)
+		{
+			case 1:Contact1.addNewContact();
+				break;
+			case 2:Contact1.editContact();
+				break;
+			case 3:Contact1.deleteContact();
+				break;
+			case 4:Contact1.printContact();
+				break;
+			case 5:System.exit(0);
+		}
 		}
 	}
 }
